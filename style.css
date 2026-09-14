@@ -27,6 +27,10 @@ body {
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 a {
@@ -56,6 +60,10 @@ section {
 
   background: rgba(5, 5, 5, 0.96);
   border-bottom: 1px solid #1d1d1d;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .nav-logo img {
@@ -72,9 +80,11 @@ section {
 .navbar nav a {
   color: #aaa;
   text-decoration: none;
+
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.5px;
+
   transition: 0.2s ease;
 }
 
@@ -84,7 +94,7 @@ section {
 
 .nav-button {
   background: var(--orange);
-  color: var(--white);
+  color: #ffffff;
 
   padding: 13px 20px;
 
@@ -94,6 +104,12 @@ section {
   letter-spacing: 1px;
 
   border-radius: 3px;
+
+  transition: 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
 }
 
 
@@ -108,9 +124,11 @@ section {
 
 .section-number {
   color: var(--orange);
+
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 3px;
+
   margin-bottom: 20px;
 }
 
@@ -130,11 +148,13 @@ section {
   padding: 16px 25px;
 
   text-decoration: none;
+
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
 
   border-radius: 3px;
+
   transition: 0.2s ease;
 }
 
@@ -144,7 +164,7 @@ section {
 
 .primary {
   background: var(--orange);
-  color: var(--white);
+  color: #ffffff;
 }
 
 .secondary {
@@ -191,6 +211,8 @@ section {
 
   border-radius: 50%;
   filter: blur(100px);
+
+  pointer-events: none;
 }
 
 .hero-content,
@@ -226,6 +248,7 @@ section {
 
 .hero-description {
   max-width: 650px;
+
   margin-top: 30px;
 
   color: var(--muted);
@@ -237,8 +260,12 @@ section {
 .hero-buttons {
   display: flex;
   gap: 15px;
+
   margin-top: 35px;
 }
+
+
+/* EVENT CARD */
 
 .event-card {
   background: var(--card);
@@ -247,6 +274,10 @@ section {
   border-top: 3px solid var(--orange);
 
   padding: 40px;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .event-label {
@@ -262,6 +293,7 @@ section {
 .event-card h2 {
   font-size: 44px;
   letter-spacing: -2px;
+
   margin-bottom: 8px;
 }
 
@@ -272,7 +304,9 @@ section {
 
 .event-divider {
   height: 1px;
+
   background: var(--line);
+
   margin: 25px 0;
 }
 
@@ -284,7 +318,9 @@ section {
 
 .event-status {
   margin-top: 10px;
+
   color: #777;
+
   font-size: 12px;
 }
 
@@ -295,12 +331,16 @@ section {
 
 .about {
   background: #0a0a0a;
+
+  transition: background-color 0.3s ease;
 }
 
 .section-heading {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 80px;
+
   align-items: end;
 
   margin-bottom: 80px;
@@ -335,6 +375,10 @@ section {
 
   display: flex;
   flex-direction: column;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .concept-card:last-child {
@@ -343,6 +387,7 @@ section {
 
 .concept-card > span {
   color: #666;
+
   font-size: 11px;
   font-weight: 800;
 }
@@ -385,22 +430,35 @@ section {
   max-width: 400px;
 
   color: var(--muted);
+
   line-height: 1.6;
 }
 
 .games-grid {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
+
   gap: 20px;
 }
 
 .game-card {
   background: var(--card);
+
   border: 1px solid var(--line);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
 }
 
 .game-art {
   aspect-ratio: 16 / 9;
+
   overflow: hidden;
 }
 
@@ -411,11 +469,18 @@ section {
   padding: 40px;
 
   background:
-    linear-gradient(135deg, #181818 0%, #090909 55%, #29100c 100%);
+    linear-gradient(
+      135deg,
+      #181818 0%,
+      #090909 55%,
+      #29100c 100%
+    );
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  transition: background 0.3s ease;
 }
 
 .game-placeholder span {
@@ -428,6 +493,7 @@ section {
 
 .game-placeholder strong {
   font-size: clamp(25px, 3vw, 50px);
+
   line-height: 0.95;
 }
 
@@ -482,23 +548,25 @@ section {
 .next-event {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
+
   gap: 100px;
 
   background: var(--orange);
-  color: var(--black);
+  color: #050505;
 }
 
 .next-event .section-number {
-  color: var(--black);
+  color: #050505;
 }
 
 .event-big-date h2 {
   font-size: clamp(100px, 15vw, 240px);
+
   line-height: 0.65;
 }
 
 .event-big-date h2 span {
-  color: var(--black);
+  color: #050505;
 }
 
 .event-kicker {
@@ -511,6 +579,7 @@ section {
 
 .event-details h3 {
   font-size: clamp(50px, 6vw, 90px);
+
   line-height: 0.9;
   letter-spacing: -4px;
 
@@ -562,12 +631,13 @@ section {
 }
 
 .next-event .primary {
-  background: var(--black);
+  background: #050505;
+  color: #ffffff;
 }
 
 .next-event .secondary {
-  color: var(--black);
-  border-color: var(--black);
+  color: #050505;
+  border-color: #050505;
 }
 
 
@@ -577,6 +647,8 @@ section {
 
 .developers-section {
   background: #080808;
+
+  transition: background-color 0.3s ease;
 }
 
 .developer-heading {
@@ -608,6 +680,10 @@ section {
 
   border: 1px solid var(--line);
   border-right: none;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .developer-benefits article:last-child {
@@ -641,8 +717,7 @@ section {
   padding: 35px 40px;
 
   background: var(--orange);
-
-  color: var(--black);
+  color: #050505;
 
   display: flex;
   justify-content: space-between;
@@ -662,7 +737,8 @@ section {
 }
 
 .developer-cta .primary {
-  background: var(--black);
+  background: #050505;
+  color: #ffffff;
 }
 
 
@@ -672,6 +748,8 @@ section {
 
 .stage-section {
   background: var(--black);
+
+  transition: background-color 0.3s ease;
 }
 
 .stage-intro {
@@ -704,6 +782,10 @@ section {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   border-left: 1px solid var(--line);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .stage-grid article:last-child {
@@ -732,7 +814,9 @@ section {
 }
 
 
-/* SCHEDULE */
+/* ==================================================
+   SCHEDULE
+   ================================================== */
 
 .schedule-preview {
   max-width: 1000px;
@@ -740,6 +824,10 @@ section {
   margin: 100px auto 0;
 
   border: 1px solid var(--line);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .schedule-header {
@@ -829,6 +917,8 @@ section {
 
 .partners-section {
   background: #0a0a0a;
+
+  transition: background-color 0.3s ease;
 }
 
 .partners-heading {
@@ -863,6 +953,15 @@ section {
 
   display: flex;
   flex-direction: column;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-3px);
 }
 
 .partner-card:last-child {
@@ -895,6 +994,7 @@ section {
 
 .future-partner h3 {
   color: var(--orange);
+
   font-size: 60px;
 }
 
@@ -934,6 +1034,8 @@ section {
   filter: blur(120px);
 
   border-radius: 50%;
+
+  pointer-events: none;
 }
 
 .final-cta > * {
@@ -943,6 +1045,7 @@ section {
 
 .final-logo {
   width: 75px;
+
   margin-bottom: 30px;
 }
 
@@ -950,7 +1053,6 @@ section {
   font-size: clamp(100px, 15vw, 230px);
 
   line-height: 0.7;
-
   letter-spacing: -8px;
 }
 
@@ -988,11 +1090,16 @@ footer {
   align-items: center;
 
   gap: 30px;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .footer-brand {
   display: flex;
   align-items: center;
+
   gap: 15px;
 }
 
@@ -1016,6 +1123,7 @@ footer {
 
 .footer-links {
   display: flex;
+
   gap: 25px;
 }
 
@@ -1037,6 +1145,252 @@ footer {
   color: #555;
 
   font-size: 10px;
+}
+
+
+/* ==================================================
+   THEME TOGGLE
+   ================================================== */
+
+.theme-toggle {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  color: var(--white);
+  background: var(--card);
+
+  border: 1px solid var(--line);
+  border-radius: 100px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.theme-sun,
+.theme-moon {
+  width: 17px;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 15px;
+  line-height: 1;
+}
+
+.theme-track {
+  width: 42px;
+  height: 22px;
+
+  padding: 3px;
+
+  display: block;
+
+  background: #333;
+
+  border-radius: 100px;
+
+  transition: background-color 0.3s ease;
+}
+
+.theme-knob {
+  display: block;
+
+  width: 16px;
+  height: 16px;
+
+  background: var(--orange);
+
+  border-radius: 50%;
+
+  transform: translateX(20px);
+
+  transition: transform 0.3s ease;
+}
+
+
+/* ==================================================
+   LIGHT MODE
+   ================================================== */
+
+html[data-theme="light"] {
+  --black: #f5f3ef;
+  --dark: #ece9e3;
+  --card: #ffffff;
+  --line: #d7d3cc;
+  --white: #111111;
+  --muted: #626262;
+}
+
+
+/* BODY */
+
+html[data-theme="light"] body {
+  background: var(--black);
+  color: var(--white);
+}
+
+
+/* NAVIGATION */
+
+html[data-theme="light"] .navbar {
+  background: rgba(245, 243, 239, 0.96);
+
+  border-bottom-color: var(--line);
+}
+
+html[data-theme="light"] .navbar nav a {
+  color: #666;
+}
+
+html[data-theme="light"] .navbar nav a:hover {
+  color: #111111;
+}
+
+
+/* WHITE PLAYFOUND LOGO -> BLACK IN LIGHT MODE */
+
+html[data-theme="light"] .nav-logo img,
+html[data-theme="light"] .hero-logo,
+html[data-theme="light"] .final-logo,
+html[data-theme="light"] .footer-brand img {
+  filter: invert(1);
+}
+
+
+/* HERO */
+
+html[data-theme="light"] .hero {
+  background: #f5f3ef;
+}
+
+
+/* CARDS */
+
+html[data-theme="light"] .event-card,
+html[data-theme="light"] .game-card,
+html[data-theme="light"] .concept-card,
+html[data-theme="light"] .developer-benefits article,
+html[data-theme="light"] .stage-grid article,
+html[data-theme="light"] .partner-card,
+html[data-theme="light"] .schedule-preview {
+  background: #ffffff;
+}
+
+
+/* ABOUT */
+
+html[data-theme="light"] .about {
+  background: #ece9e3;
+}
+
+
+/* FEATURED GAMES */
+
+html[data-theme="light"] .games-section {
+  background: #f5f3ef;
+}
+
+html[data-theme="light"] .game-placeholder {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #e9e6df 55%,
+      #ffd8d1 100%
+    );
+}
+
+
+/* DEVELOPERS */
+
+html[data-theme="light"] .developers-section {
+  background: #f8f6f2;
+}
+
+
+/* STAGE */
+
+html[data-theme="light"] .stage-section {
+  background: #f5f3ef;
+}
+
+
+/* PARTNERS */
+
+html[data-theme="light"] .partners-section {
+  background: #ece9e3;
+}
+
+
+/* FINAL CTA */
+
+html[data-theme="light"] .final-cta {
+  background: #f5f3ef;
+}
+
+
+/* FOOTER */
+
+html[data-theme="light"] footer {
+  background: #ffffff;
+}
+
+
+/* SECONDARY BUTTONS */
+
+html[data-theme="light"] .secondary {
+  color: #111111;
+
+  border-color: #777;
+}
+
+html[data-theme="light"] .secondary:hover {
+  border-color: #111111;
+}
+
+
+/* THEME SWITCH */
+
+html[data-theme="light"] .theme-toggle {
+  background: #ffffff;
+
+  color: #111111;
+
+  border-color: #d7d3cc;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .theme-track {
+  background: #d4d0c9;
+}
+
+html[data-theme="light"] .theme-knob {
+  transform: translateX(0);
 }
 
 
@@ -1081,6 +1435,7 @@ footer {
 
   .navbar {
     height: 75px;
+
     padding: 0 5%;
   }
 
@@ -1090,6 +1445,7 @@ footer {
 
   .nav-button {
     font-size: 9px;
+
     padding: 11px 12px;
   }
 
@@ -1116,6 +1472,7 @@ footer {
 
   .hero-buttons {
     flex-direction: column;
+
     align-items: stretch;
   }
 
@@ -1167,6 +1524,7 @@ footer {
   .game-info > p,
   .game-info .text-link {
     display: block;
+
     margin-top: 20px;
   }
 
@@ -1189,8 +1547,9 @@ footer {
   }
 
   .developer-cta .button {
-    margin-top: 25px;
     width: 100%;
+
+    margin-top: 25px;
   }
 
   .schedule-row {
@@ -1220,6 +1579,11 @@ footer {
 
   .copyright {
     justify-self: start;
+  }
+
+  .theme-toggle {
+    right: 15px;
+    bottom: 15px;
   }
 
 }
