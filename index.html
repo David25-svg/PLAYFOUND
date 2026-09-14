@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -492,7 +492,9 @@
         <div class="schedule-row">
           <time>12:15 PM</time>
           <div>
-            <strong>Game Developers Conference — Introduction & Industry Talk</strong>
+            <strong>
+              Game Developers Conference — Introduction & Industry Talk
+            </strong>
             <span>THE STAGE</span>
           </div>
         </div>
@@ -501,7 +503,9 @@
         <div class="schedule-row">
           <time>12:30 PM</time>
           <div>
-            <strong>Bigger Boss Games — Developer Talk & Game Interview</strong>
+            <strong>
+              Bigger Boss Games — Developer Talk & Game Interview
+            </strong>
             <span>THE STAGE</span>
           </div>
         </div>
@@ -575,7 +579,9 @@
         <div class="partner-card future-partner">
           <span>MORE COMING</span>
           <h3>+</h3>
-          <p>Additional organizations will be announced as confirmed.</p>
+          <p>
+            Additional organizations will be announced as confirmed.
+          </p>
         </div>
 
       </div>
@@ -660,6 +666,74 @@
     </p>
 
   </footer>
+
+
+  <!-- =========================
+       DARK / LIGHT MODE TOGGLE
+  ========================== -->
+
+  <button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Switch between light and dark mode"
+    title="Switch theme"
+  >
+    <span class="theme-sun">☀</span>
+
+    <span class="theme-track">
+      <span class="theme-knob"></span>
+    </span>
+
+    <span class="theme-moon">☾</span>
+  </button>
+
+
+  <!-- =========================
+       THEME SCRIPT
+  ========================== -->
+
+  <script>
+
+    const themeToggle = document.getElementById("themeToggle");
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem("playfound-theme");
+
+    if (savedTheme) {
+
+      root.dataset.theme = savedTheme;
+
+    } else if (
+      window.matchMedia("(prefers-color-scheme: light)").matches
+    ) {
+
+      root.dataset.theme = "light";
+
+    } else {
+
+      root.dataset.theme = "dark";
+
+    }
+
+
+    themeToggle.addEventListener("click", () => {
+
+      const newTheme =
+        root.dataset.theme === "light"
+          ? "dark"
+          : "light";
+
+      root.dataset.theme = newTheme;
+
+      localStorage.setItem(
+        "playfound-theme",
+        newTheme
+      );
+
+    });
+
+  </script>
 
 </body>
 
