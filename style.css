@@ -1,45 +1,322 @@
+/* =========================
+   PLAYFOUND
+   ========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #000;
-  color: #fff;
+  background: #050505;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero {
-  min-height: 100vh;
+
+/* NAVIGATION */
+
+.navbar {
+  height: 90px;
+  padding: 0 6%;
 
   display: flex;
-  flex-direction: column;
-
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
 
-  text-align: center;
+  position: relative;
+  z-index: 10;
 
-  padding: 40px;
+  border-bottom: 1px solid #1d1d1d;
 }
 
-h1 {
-  font-size: 90px;
-  letter-spacing: 6px;
+.nav-logo img {
+  width: 55px;
+  display: block;
 }
 
-h2 {
-  margin-top: 10px;
-  font-size: 24px;
+.navbar nav {
+  display: flex;
+  gap: 35px;
 }
 
-p {
-  margin-top: 25px;
-  max-width: 650px;
+.navbar nav a {
+  color: #aaaaaa;
+  text-decoration: none;
 
-  color: #aaa;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  transition: 0.2s ease;
+}
+
+.navbar nav a:hover {
+  color: #ffffff;
+}
+
+.nav-button {
+  background: #ff4b32;
+  color: white;
+
+  padding: 13px 20px;
+
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  border-radius: 4px;
+
+  transition: 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: calc(100vh - 90px);
+
+  padding: 80px 8%;
+
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  align-items: center;
+  gap: 80px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* subtle background glow */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  left: -300px;
+  bottom: -350px;
+
+  background: #ff4b32;
+  opacity: 0.08;
+
+  border-radius: 50%;
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo {
+  width: 90px;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #ff4b32;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 7vw, 105px);
+
+  line-height: 0.92;
+
+  letter-spacing: -4px;
+
+  max-width: 900px;
+}
+
+.hero h1 span {
+  color: #ff4b32;
+}
+
+.hero-description {
+  max-width: 620px;
+
+  margin-top: 30px;
+
+  color: #aaaaaa;
 
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.button {
+  display: inline-block;
+
+  padding: 16px 25px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  border-radius: 4px;
+
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #ff4b32;
+  color: white;
+}
+
+.secondary {
+  color: white;
+  border: 1px solid #555;
+  background: transparent;
+}
+
+.secondary:hover {
+  border-color: white;
+}
+
+
+/* EVENT CARD */
+
+.event-card {
+  position: relative;
+  z-index: 2;
+
+  background: #101010;
+
+  border: 1px solid #252525;
+  border-top: 3px solid #ff4b32;
+
+  padding: 40px;
+
+  max-width: 400px;
+}
+
+.event-label {
+  color: #ff4b32;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 18px;
+}
+
+.event-card h2 {
+  font-size: 45px;
+  letter-spacing: -2px;
+
+  margin-bottom: 5px;
+}
+
+.event-card > p {
+  color: #aaaaaa;
+}
+
+.event-divider {
+  height: 1px;
+
+  background: #292929;
+
+  margin: 25px 0;
+}
+
+.event-card .event-week {
+  color: white;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.event-card .event-status {
+  margin-top: 10px;
+
+  font-size: 12px;
+
+  color: #777777;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar nav {
+    display: none;
+  }
+
+  .nav-button {
+    font-size: 10px;
+    padding: 11px 14px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    padding: 60px 7%;
+
+    gap: 50px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-card {
+    width: 100%;
+    max-width: none;
+  }
 }
